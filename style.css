@@ -1,0 +1,1249 @@
+/* =========================================
+   1. GLOBAL STYLES AND COLOURS
+========================================= */
+
+:root {
+    --primary-color: #3949AB;
+    --primary-hover: #283593;
+    --light-indigo: #EEF2FF;
+    --text-color: #1E293B;
+    --paragraph-color: #64748B;
+    --background-color: #FFFFFF;
+    --light-background: #F8FAFC;
+    --border-color: #E2E8F0;
+    --success-color: #15803D;
+    --error-color: #B91C1C;
+    --shadow: 0 15px 35px rgba(30, 41, 59, 0.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   2. SHARED BUTTONS
+========================================= */
+
+.primary-button,
+.secondary-button,
+.nav-button,
+.form-submit {
+    display: inline-block;
+    border-radius: 8px;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease,
+                color 0.3s ease,
+                transform 0.3s ease;
+}
+
+.primary-button {
+    padding: 14px 22px;
+    background-color: var(--primary-color);
+    color: #FFFFFF;
+}
+
+.primary-button:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+.secondary-button {
+    padding: 14px 22px;
+    background-color: var(--light-indigo);
+    color: var(--primary-color);
+}
+
+.secondary-button:hover {
+    background-color: #DDE4FF;
+}
+
+.nav-button {
+    padding: 11px 22px;
+    background-color: var(--primary-color);
+    color: #FFFFFF;
+}
+
+.nav-button:hover {
+    background-color: var(--primary-hover);
+}
+
+.form-submit {
+    width: 100%;
+    padding: 15px 20px;
+    border: none;
+    background-color: var(--primary-color);
+    color: #FFFFFF;
+    font-size: 15px;
+}
+
+.form-submit:hover {
+    background-color: var(--primary-hover);
+}
+
+.text-link {
+    display: inline-block;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.text-link:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================
+   3. SHARED NAVIGATION
+========================================= */
+
+header {
+    background-color: #FFFFFF;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.logo {
+    color: var(--text-color);
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: var(--primary-color);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--paragraph-color);
+    font-size: 15px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+
+/* =========================================
+   4. SHARED SECTION HEADINGS
+========================================= */
+
+.section-heading {
+    max-width: 650px;
+    margin: 0 auto 45px;
+    text-align: center;
+}
+
+.section-heading h2,
+.cta-section h2 {
+    margin-bottom: 18px;
+    font-size: clamp(28px, 3vw, 40px);
+    line-height: 1.2;
+    letter-spacing: -1px;
+}
+
+.section-heading > p:last-child {
+    color: var(--paragraph-color);
+}
+
+.eyebrow {
+    margin-bottom: 18px;
+    color: var(--primary-color);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+
+/* =========================================
+   5. HOMEPAGE HERO
+========================================= */
+
+.hero {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 85px 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 55px;
+}
+
+.hero-content {
+    max-width: 560px;
+}
+
+.hero h1 {
+    margin-bottom: 24px;
+    font-size: clamp(36px, 4vw, 58px);
+    line-height: 1.12;
+    letter-spacing: -2px;
+}
+
+.hero-description {
+    max-width: 500px;
+    margin-bottom: 30px;
+    color: var(--paragraph-color);
+    font-size: 17px;
+}
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.small-note {
+    margin-top: 22px;
+    color: var(--paragraph-color);
+    font-size: 13px;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 430px;
+    object-fit: cover;
+    border-radius: 18px;
+    box-shadow: 0 20px 50px rgba(30, 41, 59, 0.12);
+}
+
+
+/* =========================================
+   6. HOMEPAGE
+========================================= */
+
+.benefits {
+    padding: 85px 30px;
+    background-color: var(--light-background);
+}
+
+.benefit-grid {
+    max-width: 1140px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.benefit-card {
+    padding: 30px;
+    background-color: #FFFFFF;
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.benefit-card:hover {
+    transform: translateY(-6px); 
+    box-shadow: var(--shadow);
+}
+
+.feature-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--light-indigo);
+    color: var(--primary-color);
+    border-radius: 12px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.benefit-card h3 {
+    margin-bottom: 12px;
+    font-size: 21px;
+}
+
+.benefit-card p {
+    margin-bottom: 22px;
+    color: var(--paragraph-color);
+    font-size: 15px;
+}
+
+.benefit-card a {
+    color: var(--primary-color);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.benefit-card a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================
+   7. SHARED CALL-TO-ACTION
+========================================= */
+
+.cta-section {
+    max-width: 1140px;
+    margin: 80px auto;
+    padding: 65px 30px;
+    background-color: var(--light-indigo);
+    border-radius: 20px;
+    text-align: center;
+}
+
+.cta-section h2 {
+    max-width: 650px;
+    margin: 0 auto 18px;
+}
+
+.cta-section p {
+    max-width: 580px;
+    margin: 0 auto 28px;
+    color: var(--paragraph-color);
+}
+
+
+/* =========================================
+   8. FEATURES PAGE
+========================================= */
+
+.features-hero {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 90px 25px 70px;
+    text-align: center;
+}
+
+.features-hero h1 {
+    margin-bottom: 22px;
+    font-size: clamp(36px, 5vw, 55px);
+    line-height: 1.15;
+    letter-spacing: -2px;
+}
+
+.features-hero > p:not(.eyebrow) {
+    max-width: 650px;
+    margin: 0 auto 30px;
+    color: var(--paragraph-color);
+    font-size: 17px;
+}
+
+.feature-detail {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 75px 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 65px;
+}
+
+.feature-detail.reverse .feature-detail-text {
+    order: 2;
+}
+
+.feature-detail.reverse .feature-visual {
+    order: 1;
+}
+
+.feature-detail-text h2 {
+    margin-bottom: 22px;
+    font-size: clamp(30px, 3.5vw, 42px);
+    line-height: 1.2;
+    letter-spacing: -1px;
+}
+
+.feature-detail-text > p:not(.eyebrow) {
+    margin-bottom: 22px;
+    color: var(--paragraph-color);
+}
+
+.feature-detail-text h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.feature-list {
+    margin-bottom: 25px;
+    list-style: none;
+}
+
+.feature-list li {
+    margin-bottom: 12px;
+    color: var(--paragraph-color);
+}
+
+.feature-list li::before {
+    content: "✓";
+    margin-right: 12px;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.feature-detail-text .feature-benefit {
+    padding: 18px;
+    background-color: var(--light-indigo);
+    border-radius: 10px;
+}
+
+
+/* Feature illustration containers */
+
+.feature-visual {
+    min-width: 0;
+    min-height: 350px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--light-indigo);
+    border-radius: 20px;
+}
+
+.mock-window,
+.team-card,
+.analytics-card {
+    width: 100%;
+    max-width: 440px;
+    padding: 24px;
+    background-color: #FFFFFF;
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+}
+
+
+/* Task management illustration */
+
+.mock-window-header,
+.mock-task,
+.mock-progress-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.mock-window-header {
+    margin-bottom: 22px;
+    font-weight: bold;
+}
+
+.mock-status {
+    padding: 5px 10px;
+    color: var(--primary-color);
+    background-color: var(--light-indigo);
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.mock-task {
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 13px;
+}
+
+.task-check {
+    width: 17px;
+    height: 17px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #CBD5E1;
+    border-radius: 5px;
+    color: #FFFFFF;
+    font-size: 12px;
+}
+
+.mock-task:first-of-type .task-check {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.task-tag {
+    padding: 4px 7px;
+    border-radius: 5px;
+    font-size: 10px;
+    white-space: nowrap;
+}
+
+.completed {
+    color: #166534;
+    background-color: #DCFCE7;
+}
+
+.in-progress {
+    color: #1D4ED8;
+    background-color: #DBEAFE;
+}
+
+.upcoming {
+    color: #475569;
+    background-color: #F1F5F9;
+}
+
+.mock-progress {
+    margin-top: 24px;
+}
+
+.mock-progress-heading {
+    margin-bottom: 10px;
+    font-size: 13px;
+}
+
+.mock-progress-heading strong {
+    color: var(--primary-color);
+}
+
+.progress-track {
+    height: 9px;
+    overflow: hidden;
+    background-color: #E2E8F0;
+    border-radius: 20px;
+}
+
+.progress-fill {
+    width: 67%;
+    height: 100%;
+    background-color: var(--primary-color);
+    border-radius: 20px;
+}
+
+
+/* Team collaboration illustration */
+
+.team-card-label,
+.analytics-label {
+    color: var(--primary-color);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+.team-card h3,
+.analytics-card h3 {
+    margin: 10px 0;
+    font-size: 23px;
+}
+
+.team-card-description {
+    margin-bottom: 22px;
+    color: var(--paragraph-color);
+    font-size: 13px;
+}
+
+.team-member {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 0;
+    border-top: 1px solid var(--border-color);
+}
+
+.avatar {
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+.avatar-one {
+    color: #1D4ED8;
+    background-color: #DBEAFE;
+}
+
+.avatar-two {
+    color: #9D174D;
+    background-color: #FCE7F3;
+}
+
+.avatar-three {
+    color: #166534;
+    background-color: #DCFCE7;
+}
+
+.team-member strong {
+    font-size: 12px;
+}
+
+.team-member p {
+    color: var(--paragraph-color);
+    font-size: 11px;
+}
+
+.member-status {
+    margin-left: auto;
+    color: var(--success-color);
+    font-size: 10px;
+}
+
+
+/* Analytics illustration */
+
+.analytics-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.analytics-stats div {
+    padding: 15px;
+    background-color: var(--light-background);
+    border-radius: 9px;
+}
+
+.analytics-stats strong,
+.analytics-stats span {
+    display: block;
+}
+
+.analytics-stats strong {
+    font-size: 28px;
+}
+
+.analytics-stats span {
+    color: var(--paragraph-color);
+    font-size: 11px;
+}
+
+.chart {
+    height: 150px;
+    padding: 15px 5px 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    gap: 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.chart-bar {
+    height: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.chart-bar span {
+    width: 100%;
+    max-width: 35px;
+    background-color: var(--primary-color);
+    border-radius: 5px 5px 0 0;
+}
+
+.bar-one span {
+    height: 40%;
+}
+
+.bar-two span {
+    height: 65%;
+}
+
+.bar-three span {
+    height: 50%;
+}
+
+.bar-four span {
+    height: 85%;
+}
+
+.bar-five span {
+    height: 72%;
+}
+
+.chart-bar small {
+    color: var(--paragraph-color);
+    font-size: 11px;
+}
+
+.chart-note {
+    margin-top: 15px;
+    color: var(--paragraph-color);
+    font-size: 11px;
+}
+
+
+/* =========================================
+   9. SHARED FORM STYLES
+========================================= */
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.form-group input:not([type="checkbox"]),
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 13px 14px;
+    color: var(--text-color);
+    background-color: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 14px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: 2px solid #C7D2FE;
+    border-color: var(--primary-color);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #94A3B8;
+}
+
+.form-group textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+.checkbox-group {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.checkbox-group input {
+    margin-top: 5px;
+    accent-color: var(--primary-color);
+}
+
+.checkbox-group label {
+    color: var(--paragraph-color);
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 1.6;
+}
+
+.form-message {
+    margin-top: 16px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.form-message.success {
+    color: var(--success-color);
+}
+
+.form-message.error {
+    color: var(--error-color);
+}
+
+
+/* =========================================
+   10. SIGN-UP PAGE
+========================================= */
+
+.signup-layout {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 30px;
+    display: grid;
+    grid-template-columns: 1fr 0.9fr;
+    align-items: center;
+    gap: 70px;
+}
+
+.signup-intro h1 {
+    max-width: 550px;
+    margin-bottom: 25px;
+    font-size: clamp(38px, 4.5vw, 58px);
+    line-height: 1.12;
+    letter-spacing: -2px;
+}
+
+.signup-description {
+    max-width: 520px;
+    margin-bottom: 35px;
+    color: var(--paragraph-color);
+    font-size: 17px;
+}
+
+.signup-benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.signup-benefit {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.check-icon {
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    background-color: var(--light-indigo);
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+.signup-benefit h3 {
+    margin-bottom: 4px;
+    font-size: 16px;
+}
+
+.signup-benefit p {
+    color: var(--paragraph-color);
+    font-size: 14px;
+}
+
+.signup-card {
+    padding: 35px;
+    background-color: #FFFFFF;
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+    box-shadow: 0 20px 55px rgba(30, 41, 59, 0.08);
+}
+
+.form-heading {
+    margin-bottom: 28px;
+}
+
+.form-heading h2 {
+    margin-bottom: 8px;
+    font-size: 27px;
+}
+
+.form-heading p {
+    color: var(--paragraph-color);
+    font-size: 14px;
+}
+
+.form-note {
+    margin-top: 16px;
+    color: var(--paragraph-color);
+    font-size: 11px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+
+/* =========================================
+   11. CONTACT PAGE
+========================================= */
+
+.contact-hero {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 75px 25px 45px;
+    text-align: center;
+}
+
+.contact-hero h1 {
+    margin-bottom: 22px;
+    font-size: clamp(36px, 5vw, 54px);
+    line-height: 1.15;
+    letter-spacing: -2px;
+}
+
+.contact-hero > p:not(.eyebrow) {
+    max-width: 650px;
+    margin: 0 auto;
+    color: var(--paragraph-color);
+    font-size: 17px;
+}
+
+.contact-layout {
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 30px 30px 80px;
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    align-items: start;
+    gap: 65px;
+}
+
+.contact-info {
+    padding-top: 15px;
+}
+
+.contact-info > h2,
+.contact-form-card > h2 {
+    margin-bottom: 15px;
+    font-size: 29px;
+}
+
+.contact-info > p,
+.contact-form-description {
+    margin-bottom: 30px;
+    color: var(--paragraph-color);
+    font-size: 15px;
+}
+
+.contact-info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.contact-icon {
+    width: 43px;
+    height: 43px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    background-color: var(--light-indigo);
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.contact-info-item h3 {
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+.contact-info-item p {
+    color: var(--paragraph-color);
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+.contact-note {
+    margin-top: 35px;
+    padding: 22px;
+    background-color: var(--light-indigo);
+    border-radius: 12px;
+}
+
+.contact-note h3 {
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.contact-note p {
+    color: var(--paragraph-color);
+    font-size: 14px;
+}
+
+.contact-form-card {
+    padding: 35px;
+    background-color: #FFFFFF;
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    box-shadow: 0 15px 45px rgba(30, 41, 59, 0.07);
+}
+
+.contact-form-card .form-submit {
+    margin-top: 5px;
+}
+
+
+/* =========================================
+   12. SHARED FOOTER
+========================================= */
+
+.footer {
+    padding: 45px 25px;
+    background-color: var(--light-background);
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.footer > p {
+    margin: 10px 0;
+    color: var(--paragraph-color);
+}
+
+.footer > a:not(.logo) {
+    display: inline-block;
+    margin: 12px 0;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.footer .copyright {
+    margin-top: 25px;
+    font-size: 13px;
+}
+
+
+/* =========================================
+   13. TABLET RESPONSIVENESS
+========================================= */
+
+@media (max-width: 850px) {
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .hero-content {
+        max-width: 700px;
+    }
+
+    .hero-image img {
+        height: 350px;
+    }
+
+    .benefit-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cta-section {
+        margin: 60px 20px;
+    }
+
+    .feature-detail {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding: 55px 25px;
+    }
+
+    .feature-detail.reverse .feature-detail-text,
+    .feature-detail.reverse .feature-visual {
+        order: initial;
+    }
+
+    .feature-visual {
+        min-height: 320px;
+    }
+
+    .signup-layout {
+        max-width: 700px;
+        grid-template-columns: 1fr;
+        gap: 45px;
+        padding: 60px 25px;
+    }
+
+    .signup-intro h1 {
+        max-width: 600px;
+    }
+
+    .contact-layout {
+        max-width: 700px;
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .contact-info {
+        padding-top: 0;
+    }
+}
+
+
+/* =========================================
+   14. MOBILE RESPONSIVENESS
+========================================= */
+
+@media (max-width: 600px) {
+    .navbar {
+        padding: 18px 20px;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .logo {
+        font-size: 25px;
+    }
+
+    .nav-links {
+        order: 3;
+        width: 100%;
+        justify-content: space-between;
+        gap: 12px;
+    }
+
+    .nav-button {
+        padding: 9px 13px;
+        font-size: 13px;
+    }
+
+    .hero {
+        padding: 50px 20px;
+    }
+
+    .hero h1 {
+        font-size: 39px;
+        letter-spacing: -1.5px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+    .hero-image img {
+        height: 280px;
+    }
+
+    .hero-buttons {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .benefits {
+        padding: 60px 20px;
+    }
+
+    .benefit-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .benefit-card {
+        padding: 25px;
+    }
+
+    .section-heading h2,
+    .cta-section h2 {
+        font-size: 28px;
+    }
+
+    .cta-section {
+        margin: 45px 15px;
+        padding: 45px 22px;
+    }
+
+    .primary-button,
+    .secondary-button {
+        text-align: center;
+    }
+
+    .features-hero {
+        padding: 60px 20px 40px;
+    }
+
+    .features-hero h1,
+    .contact-hero h1 {
+        letter-spacing: -1px;
+    }
+
+    .feature-detail {
+        padding: 40px 20px;
+    }
+
+    .feature-visual {
+        min-height: 300px;
+        padding: 15px;
+    }
+
+    .mock-window,
+    .team-card,
+    .analytics-card {
+        padding: 18px;
+    }
+
+    .mock-task {
+        flex-wrap: wrap;
+    }
+
+    .signup-layout {
+        padding: 45px 20px;
+    }
+
+    .signup-intro h1 {
+        font-size: 40px;
+        letter-spacing: -1px;
+    }
+
+    .signup-card,
+    .contact-form-card {
+        padding: 25px 20px;
+    }
+
+    .form-heading h2 {
+        font-size: 24px;
+    }
+
+    .contact-hero {
+        padding: 55px 20px 30px;
+    }
+
+    .contact-layout {
+        padding: 25px 20px 55px;
+    }
+
+    .contact-info > h2,
+    .contact-form-card > h2 {
+        font-size: 25px;
+    }
+
+    .footer {
+        padding: 35px 20px;
+    }
+}
+
